@@ -1,0 +1,3 @@
+/Users/alx/Documents/GitHub/SequencesSorting/cmake-build-debug/CMakeFiles/SequencesSorting.dir
+/Users/alx/Documents/GitHub/SequencesSorting/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/alx/Documents/GitHub/SequencesSorting/cmake-build-debug/CMakeFiles/rebuild_cache.dir
