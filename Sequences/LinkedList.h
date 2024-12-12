@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../Sequences/Sequences.h"
+#include "Sequence.h"
 #include "DynamicArray.h"
 
 template <class T>
-class LinkedList : public Sequence<T>{
+class LinkedList : public Sequence<T> {
 private:
-    struct Node{
+    struct Node {
         T data;
         Node* next;
 
@@ -20,188 +20,147 @@ private:
 public:
     class LinkedListIterator : public Sequence<T>::Iterator {
     private:
-
         Node* current;
 
     public:
+        explicit LinkedListIterator(Node* start) : current(start) {}
 
-        LinkedListIterator(Node* start) : current(start) { }
-
-        bool operator==(const Sequence<T>::Iterator& other) const override{
-            const LinkedListIterator* otherIterator = dynamic_cast<const LinkedListIterator*>(&other);
+        bool operator==(const typename Sequence<T>::Iterator& other) const override {
+            const auto* otherIterator = dynamic_cast<const LinkedListIterator*>(&other);
             return otherIterator && current == otherIterator->current;
         }
 
-        bool operator!=(const Sequence<T>::Iterator& other) const override{
+        bool operator!=(const typename Sequence<T>::Iterator& other) const override {
             return !(*this == other);
         }
 
-        T& operator*() override{
+        T& operator*() override {
             return current->data;
         }
 
-        Sequence<T>::Iterator& operator++() override{
-            if (current){
+        typename Sequence<T>::Iterator& operator++() override {
+            if (current) {
                 current = current->next;
             }
-
             return *this;
         }
     };
 
-    Sequence<T>::Iterator* ToBegin() override{
+    typename Sequence<T>::Iterator* ToBegin() override {
         return new LinkedListIterator(head);
     }
 
-    Sequence<T>::Iterator* ToEnd() override{
+    typename Sequence<T>::Iterator* ToEnd() override {
         return new LinkedListIterator(nullptr);
     }
 
-    LinkedList() : head(nullptr), tail(nullptr), length(0) {}
 
-    LinkedList(T* items, int count) : head(nullptr), tail(nullptr), length(0){
-        for (int i = 0; i < count; ++i){
-            Append(items[i]);
-        }
+
+    ~LinkedList() {
+        Clear();
     }
 
-    LinkedList(LinkedList<T>& list) : head(nullptr), tail(nullptr), length(0)
-    {
-        Node* current = list.head;
-
-        while (current != nullptr)
-        {
-            Append(current->data);
-            current = current->next;
-        }
-    }
-
-    LinkedList(DynamicArray<T>& dynamicArray) : head(nullptr), tail(nullptr), length(0)
-    {
-        for (int i = 1; i < dynamicArray.GetLength(); i++)
-        {
-            Append(dynamicArray.GetElement(i));
-        }
-    }
-
-    ~LinkedList()
-    {
-        Node* current = head;
-        Node* next;
-
-        while (current != nullptr)
-        {
-            next = current->next;
-            delete current;
-            current = next;
-        }
-    }
-
-    T& GetHead() override
-    {
+    T& GetHead() override {
         return head->data;
     }
 
-    T& GetTail() override{
+    T& GetTail() override {
         return tail->data;
     }
 
-    T&  GetElement(int index)  override{
+    T& GetElement(int index) override {
         return GetNode(index)->data;
     }
 
-    Node* GetNode(int index){
+    Node* GetNode(int index) {
         Node* current = head;
-
-        for (int i = 0; i < index; i++){
+        for (int i = 0; i < index; ++i) {
             current = current->next;
         }
-
         return current;
     }
 
-    void Swap(T& a, T& b) override{
+    void Swap(T& a, T& b) override {
         T temp = a;
         a = b;
         b = temp;
     }
 
-    void Insert(T value, int index){
-        Node* current = head;
-        for (int i = 0; i < index; i++){
-            current = current->next;
-        }
-        current->data = value;
+    void Set(T item, int index) override {
+        GetNode(index)->data = item;
     }
 
-    LinkedList<T>* GetSubsequence(int startIndex, int endIndex) override{
-        if (endIndex >= length){
+    LinkedList<T>* GetSubsequence(int startIndex, int endIndex) override {
+        if (endIndex >= length) {
             endIndex = length - 1;
         }
-
-        LinkedList<T>* sublist = new LinkedList<T>();
+        auto* sublist = new LinkedList<T>();
         Node* current = head;
-
-        for (int i = 0; i <= endIndex; i++){
-            if (i >= startIndex){
-                sublist->Append(current->data);
+        for (int i = 0; i <= endIndex; ++i) {
+            if (i >= startIndex) {
+                sublist->PushFront(current->data);
             }
-
             current = current->next;
         }
-
         return sublist;
     }
 
-    int GetLength() override{
+    int GetLength() override {
         return length;
     }
 
-    void Append(T item) override{
+    void PushFront(T item) override {
         Node* newNode = new Node(item);
-
-        if (length == 0){
+        if (length == 0) {
             head = tail = newNode;
-        }
-        else{
+        } else {
             tail->next = newNode;
             tail = newNode;
         }
-
         length++;
     }
 
-    void Prepend(T item) override{
+    void PushBack(T item) override {
         Node* newNode = new Node(item, head);
-
-        if (length == 0){
+        if (length == 0) {
             head = tail = newNode;
-        }
-        else{
+        } else {
+            newNode->next = head;
             head = newNode;
         }
-
         length++;
     }
 
-    void Concat(Sequence<T>* list) override{
-        int length = list->GetLength();
-        for (int i = 0; i < length; i++){
-            Append(list->GetElement(i));
+    void Insert(T item, int index) override {
+        if (index == 0) {
+            PushBack(item);
+        } else if (index == length) {
+            PushFront(item);
+        } else {
+            Node* current = GetNode(index - 1);
+            Node* newNode = new Node(item, current->next);
+            current->next = newNode;
+            length++;
         }
     }
 
-    void Print() {
-        Node* current = head;
-        cout << "Elements in the list: ";
-        while (current) {
-            cout << current->data << " ";
-            current = current->next;
+    void Concat(Sequence<T>* list) override {
+        for (int i = 0; i < list->GetLength(); ++i) {
+            LinkedList<T>::PushFront(list->GetElement(i));
         }
-        cout << endl;
     }
 
-    void Clear() {
+    // void Print() {
+    //     Node* current = head;
+    //     std::cout << "Elements: ";
+    //     while (current) {
+    //         std::cout << current->data << " | ";
+    //         current = current->next;
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+    void Clear() override{
         Node* current = head;
         while (current != nullptr) {
             Node* next = current->next;
@@ -210,5 +169,27 @@ public:
         }
         head = tail = nullptr;
         length = 0;
+    }
+
+    LinkedList() : head(nullptr), tail(nullptr), length(0) {}
+
+    LinkedList(T* items, int count) : head(nullptr), tail(nullptr), length(0) {
+        for (int i = 0; i < count; ++i) {
+            LinkedList<T>::PushFront(items[i]);
+        }
+    }
+
+    LinkedList(const LinkedList<T>& list) : head(nullptr), tail(nullptr), length(0) {
+        Node* current = list.head;
+        while (current != nullptr) {
+            LinkedList<T>::PushFront(current->data);
+            current = current->next;
+        }
+    }
+
+    LinkedList(const DynamicArray<T>& dynamicArray) : head(nullptr), tail(nullptr), length(0) {
+        for (int i = 0; i < dynamicArray.GetLength(); ++i) {
+            LinkedList<T>::PushFront(dynamicArray.GetElement(i));
+        }
     }
 };

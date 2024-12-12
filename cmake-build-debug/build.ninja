@@ -55,29 +55,53 @@ build CMakeFiles/SequencesSorting.dir/main.cpp.o: CXX_COMPILER__SequencesSorting
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
   OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir
 
-build CMakeFiles/SequencesSorting.dir/Interface/Interface.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Interface/Interface.cpp || cmake_object_order_depends_target_SequencesSorting
-  DEP_FILE = CMakeFiles/SequencesSorting.dir/Interface/Interface.cpp.o.d
+build CMakeFiles/SequencesSorting.dir/Tests/SequenceFunctionalTests.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/SequenceFunctionalTests.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/SequenceFunctionalTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/SequencesSorting.dir
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+
+build CMakeFiles/SequencesSorting.dir/Tests/SequenceStressTests.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/SequenceStressTests.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/SequenceStressTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/SequencesSorting.dir
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+
+build CMakeFiles/SequencesSorting.dir/Tests/SorterStressTests.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/SorterStressTests.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/SorterStressTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/SequencesSorting.dir
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+
+build CMakeFiles/SequencesSorting.dir/Tests/SorterFunctionalTests.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/SorterFunctionalTests.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/SorterFunctionalTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/SequencesSorting.dir
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+
+build CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Interface/UI.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
   OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Interface
 
-build CMakeFiles/SequencesSorting.dir/Tests/FileWork.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/FileWork.cpp || cmake_object_order_depends_target_SequencesSorting
-  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/FileWork.cpp.o.d
+build CMakeFiles/SequencesSorting.dir/Interface/PersonSortingInterface.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Interface/PersonSortingInterface.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Interface/PersonSortingInterface.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
-  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Interface
 
-build CMakeFiles/SequencesSorting.dir/Tests/SequenceTest.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/SequenceTest.cpp || cmake_object_order_depends_target_SequencesSorting
-  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/SequenceTest.cpp.o.d
+build CMakeFiles/SequencesSorting.dir/Generators/IntegerDataGenerator.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Generators/IntegerDataGenerator.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Generators/IntegerDataGenerator.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
-  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Generators
 
-build CMakeFiles/SequencesSorting.dir/Tests/Test.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Tests/Test.cpp || cmake_object_order_depends_target_SequencesSorting
-  DEP_FILE = CMakeFiles/SequencesSorting.dir/Tests/Test.cpp.o.d
+build CMakeFiles/SequencesSorting.dir/Interface/IntegerSortingInterface.cpp.o: CXX_COMPILER__SequencesSorting_unscanned_Debug /Users/alx/Documents/GitHub/SequencesSorting/Interface/IntegerSortingInterface.cpp || cmake_object_order_depends_target_SequencesSorting
+  DEP_FILE = CMakeFiles/SequencesSorting.dir/Interface/IntegerSortingInterface.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
-  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Tests
+  OBJECT_FILE_DIR = CMakeFiles/SequencesSorting.dir/Interface
 
 
 # =============================================================================
@@ -87,7 +111,7 @@ build CMakeFiles/SequencesSorting.dir/Tests/Test.cpp.o: CXX_COMPILER__SequencesS
 #############################################
 # Link the executable SequencesSorting
 
-build SequencesSorting: CXX_EXECUTABLE_LINKER__SequencesSorting_Debug CMakeFiles/SequencesSorting.dir/main.cpp.o CMakeFiles/SequencesSorting.dir/Interface/Interface.cpp.o CMakeFiles/SequencesSorting.dir/Tests/FileWork.cpp.o CMakeFiles/SequencesSorting.dir/Tests/SequenceTest.cpp.o CMakeFiles/SequencesSorting.dir/Tests/Test.cpp.o
+build SequencesSorting: CXX_EXECUTABLE_LINKER__SequencesSorting_Debug CMakeFiles/SequencesSorting.dir/main.cpp.o CMakeFiles/SequencesSorting.dir/Tests/SequenceFunctionalTests.cpp.o CMakeFiles/SequencesSorting.dir/Tests/SequenceStressTests.cpp.o CMakeFiles/SequencesSorting.dir/Tests/SorterStressTests.cpp.o CMakeFiles/SequencesSorting.dir/Tests/SorterFunctionalTests.cpp.o CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o CMakeFiles/SequencesSorting.dir/Interface/PersonSortingInterface.cpp.o CMakeFiles/SequencesSorting.dir/Generators/IntegerDataGenerator.cpp.o CMakeFiles/SequencesSorting.dir/Interface/IntegerSortingInterface.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk
   OBJECT_DIR = CMakeFiles/SequencesSorting.dir
   POST_BUILD = :

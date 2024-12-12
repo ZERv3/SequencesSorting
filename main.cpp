@@ -1,7 +1,6 @@
-#include <iostream>
+#include "Interface/UI.h" // где объявлена void RunUserInterface();
 
-int main()
-{
-    std::cout << "Hello, World!" << std::endl;
+int main() {
+    RunUserInterface();
     return 0;
 }
