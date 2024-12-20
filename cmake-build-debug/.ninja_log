@@ -1,0 +1,18 @@
+# ninja log v6
+7	821	1734024404139142511	CMakeFiles/SequencesSorting.dir/Tests/SorterFunctionalTests.cpp.o	d0b3fa40e177e1de
+9	230	1734021576529121184	CMakeFiles/SequencesSorting.dir/main.cpp.o	122c72dfaad76b46
+2	61	1734025122302169116	build.ninja	652b2e3282eeea5a
+7	779	1734024404139023343	CMakeFiles/SequencesSorting.dir/Tests/SorterStressTests.cpp.o	3213e35a3e3118ab
+519	569	1734024630899761485	SequencesSorting	8afa2d5f5ec2669b
+7	809	1734024404138888634	CMakeFiles/SequencesSorting.dir/Tests/SequenceStressTests.cpp.o	5450332a2daaa8ff
+6	779	1734024404138455213	CMakeFiles/SequencesSorting.dir/Tests/SequenceFunctionalTests.cpp.o	8b1ce43d99d2d01e
+4	420	1734023771365532631	CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o	851f1093316b1be9
+7	519	1734024630387124537	CMakeFiles/SequencesSorting.dir/Interface/PersonSortingInterface.cpp.o	3d3eeb9bc2c48bde
+6	579	1734025394924153297	CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o	851f1093316b1be9
+7	587	1734025394924786928	CMakeFiles/SequencesSorting.dir/Interface/IntegerSortingInterface.cpp.o	26b2d1fa4667f60b
+7	617	1734025394924616593	CMakeFiles/SequencesSorting.dir/Generators/IntegerDataGenerator.cpp.o	a4d143f6fb5786fa
+617	673	1734025395535089258	SequencesSorting	1bfcc05b2ebc77a5
+5	608	1734025423002166668	CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o	851f1093316b1be9
+609	670	1734025423605988698	SequencesSorting	1bfcc05b2ebc77a5
+6	573	1734025435481614339	CMakeFiles/SequencesSorting.dir/Interface/UI.cpp.o	851f1093316b1be9
+573	613	1734025436047883120	SequencesSorting	1bfcc05b2ebc77a5
