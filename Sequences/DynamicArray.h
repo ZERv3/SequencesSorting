@@ -90,6 +90,14 @@ public:
     T& GetElement(int index) override {
         return data[index];
     }
+    
+    const T& GetElement(int index) const {
+        return data[index];
+    }
+    
+    int GetSize() const {
+        return this->size;
+    }
 
     void Swap(T& a, T& b) override {
         T temp = a;
@@ -129,6 +137,10 @@ public:
         }
         Set(data, index);
     }
+    
+    auto GetData() const {
+        return this->data;
+    }
 
     void Concat(Sequence<T>* dynamicArray) override {
         for (int i = 0; i < dynamicArray->GetLength(); i++) {
@@ -136,13 +148,15 @@ public:
         }
     }
 
-    // void Print() const {
-    //     std::cout << "Elements in the array: ";
-    //     for (int i = 0; i < size; i++) {
-    //         std::cout << data[i] << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
+    friend std::ostream& operator<<(std::ostream& outStream, const DynamicArray<T>& dynArr) {
+        int size = dynArr.GetSize();
+        auto data = dynArr.GetData();
+         for (int i = 0; i < size; i++) {
+             outStream << data[i] << " ";
+         }
+        return outStream;
+
+     }
 
     void Clear() override{
         delete[] data;

@@ -2,6 +2,7 @@
 
 #include "Sequence.h"
 #include "DynamicArray.h"
+#include "../Hash/Functional.h"
 
 template <class T>
 class LinkedList : public Sequence<T> {
@@ -79,6 +80,28 @@ public:
         }
         return current;
     }
+    
+    int FindIndex(T value){
+        Node* current = head;
+        for (int i = 0; i < this->length; ++i) {
+            if(current->data == value){return i;}
+            else current=current->next;
+        }
+        return -1;
+    }
+    
+    int FindIndex(T* value){
+        Node* current = head;
+        for (int i = 0; i < this->length; ++i) {
+            if(*(current->data) == *(value)){return i;}
+            else current=current->next;
+        }
+        return -1;
+    }
+    
+    bool Find(T value){
+        return FindIndex(value)!=-1;
+    }
 
     void Swap(T& a, T& b) override {
         T temp = a;
@@ -88,6 +111,36 @@ public:
 
     void Set(T item, int index) override {
         GetNode(index)->data = item;
+    }
+    
+    void Remove(int index) {
+        if (index < 0 || index >= length) {
+            throw std::out_of_range("Index out of range");
+        }
+
+        Node* toDelete = nullptr;
+
+        if (index == 0) { // Удаление головы
+            toDelete = head;
+            head = head->next;
+            if (length == 1) { // Если список состоял из одного элемента
+                tail = nullptr;
+            }
+        } else {
+            Node* current = head;
+            for (int i = 0; i < index - 1; ++i) {
+                current = current->next;
+            }
+            toDelete = current->next;
+            current->next = toDelete->next;
+
+            if (toDelete == tail) { // Если удаляется хвост
+                tail = current;
+            }
+        }
+
+        delete toDelete;
+        length--;
     }
 
     LinkedList<T>* GetSubsequence(int startIndex, int endIndex) override {
@@ -113,7 +166,8 @@ public:
         Node* newNode = new Node(item);
         if (length == 0) {
             head = tail = newNode;
-        } else {
+        }
+        else{
             tail->next = newNode;
             tail = newNode;
         }
@@ -149,16 +203,45 @@ public:
             LinkedList<T>::PushFront(list->GetElement(i));
         }
     }
+    
+    
 
-    // void Print() {
-    //     Node* current = head;
-    //     std::cout << "Elements: ";
-    //     while (current) {
-    //         std::cout << current->data << " | ";
-    //         current = current->next;
-    //     }
-    //     std::cout << std::endl;
-    // }
+     void Print() {
+         if(this->length != 0){
+             Node* current = head;
+             while (current) {
+                 std::cout << current->data << " | ";
+                 current = current->next;
+             }
+             std::cout << std::endl;
+         }
+         else{
+             std::cout << "EMPTY" << std::endl;
+         }
+     }
+    
+    // Общая версия для LinkedList<T>
+    friend std::ostream& operator<<(std::ostream& outStream, LinkedList<T>& list) {
+        if (list.GetLength() != 0) {
+            auto current = list.GetNode(0);
+            while (current) {
+                if constexpr (std::is_pointer<T>::value) {
+                                if (current->data) {
+                                    outStream << *(current->data) << " | "; // Разыменование указателя
+                                } else {
+                                    outStream << "nullptr | "; // Обработка null-указателей
+                                }
+                            } else {
+                                outStream << current->data << " | "; // Обычный тип
+                            }
+                            current = current->next;
+            }
+        } else {
+            outStream << "EMPTY";
+        }
+        return outStream;
+    }
+    
 
     void Clear() override{
         Node* current = head;

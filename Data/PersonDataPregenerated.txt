@@ -1,80 +1,80 @@
-PERSON: 1 , "Alice" , "Smith" , 1960 , 1.50 , 50.00
-PERSON: 2 , "Bob" , "Johnson" , 1961 , 1.51 , 50.50
-PERSON: 3 , "Charlie" , "Brown" , 1962 , 1.52 , 51.00
-PERSON: 4 , "Diana" , "Williams" , 1963 , 1.53 , 51.50
-PERSON: 5 , "Eve" , "Jones" , 1964 , 1.54 , 52.00
-PERSON: 6 , "Frank" , "Miller" , 1965 , 1.55 , 52.50
-PERSON: 7 , "Grace" , "Davis" , 1966 , 1.56 , 53.00
-PERSON: 8 , "Hank" , "Garcia" , 1967 , 1.57 , 53.50
-PERSON: 9 , "Ivy" , "Rodriguez" , 1968 , 1.58 , 54.00
-PERSON: 10 , "Jack" , "Wilson" , 1969 , 1.59 , 54.50
-PERSON: 11 , "Karen" , "Martinez" , 1970 , 1.60 , 55.00
-PERSON: 12 , "Leo" , "Anderson" , 1971 , 1.61 , 55.50
-PERSON: 13 , "Mona" , "Taylor" , 1972 , 1.62 , 56.00
-PERSON: 14 , "Nina" , "Thomas" , 1973 , 1.63 , 56.50
-PERSON: 15 , "Oscar" , "Hernandez" , 1974 , 1.64 , 57.00
-PERSON: 16 , "Paula" , "Moore" , 1975 , 1.65 , 57.50
-PERSON: 17 , "Quentin" , "Martin" , 1976 , 1.66 , 58.00
-PERSON: 18 , "Rachel" , "Jackson" , 1977 , 1.67 , 58.50
-PERSON: 19 , "Steve" , "Thompson" , 1978 , 1.68 , 59.00
-PERSON: 20 , "Tina" , "White" , 1979 , 1.69 , 59.50
-PERSON: 21 , "Alice" , "Smith" , 1980 , 1.70 , 60.00
-PERSON: 22 , "Bob" , "Johnson" , 1981 , 1.71 , 60.50
-PERSON: 23 , "Charlie" , "Brown" , 1982 , 1.72 , 61.00
-PERSON: 24 , "Diana" , "Williams" , 1983 , 1.73 , 61.50
-PERSON: 25 , "Eve" , "Jones" , 1984 , 1.74 , 62.00
-PERSON: 26 , "Frank" , "Miller" , 1985 , 1.75 , 62.50
-PERSON: 27 , "Grace" , "Davis" , 1986 , 1.76 , 63.00
-PERSON: 28 , "Hank" , "Garcia" , 1987 , 1.77 , 63.50
-PERSON: 29 , "Ivy" , "Rodriguez" , 1988 , 1.78 , 64.00
-PERSON: 30 , "Jack" , "Wilson" , 1989 , 1.79 , 64.50
-PERSON: 31 , "Karen" , "Martinez" , 1990 , 1.80 , 65.00
-PERSON: 32 , "Leo" , "Anderson" , 1960 , 1.81 , 65.50
-PERSON: 33 , "Mona" , "Taylor" , 1961 , 1.82 , 66.00
-PERSON: 34 , "Nina" , "Thomas" , 1962 , 1.83 , 66.50
-PERSON: 35 , "Oscar" , "Hernandez" , 1963 , 1.84 , 67.00
-PERSON: 36 , "Paula" , "Moore" , 1964 , 1.85 , 67.50
-PERSON: 37 , "Quentin" , "Martin" , 1965 , 1.86 , 68.00
-PERSON: 38 , "Rachel" , "Jackson" , 1966 , 1.87 , 68.50
-PERSON: 39 , "Steve" , "Thompson" , 1967 , 1.88 , 69.00
-PERSON: 40 , "Tina" , "White" , 1968 , 1.89 , 69.50
-PERSON: 41 , "Alice" , "Smith" , 1969 , 1.90 , 70.00
-PERSON: 42 , "Bob" , "Johnson" , 1970 , 1.91 , 70.50
-PERSON: 43 , "Charlie" , "Brown" , 1971 , 1.92 , 71.00
-PERSON: 44 , "Diana" , "Williams" , 1972 , 1.93 , 71.50
-PERSON: 45 , "Eve" , "Jones" , 1973 , 1.94 , 72.00
-PERSON: 46 , "Frank" , "Miller" , 1974 , 1.95 , 72.50
-PERSON: 47 , "Grace" , "Davis" , 1975 , 1.96 , 73.00
-PERSON: 48 , "Hank" , "Garcia" , 1976 , 1.97 , 73.50
-PERSON: 49 , "Ivy" , "Rodriguez" , 1977 , 1.98 , 74.00
-PERSON: 50 , "Jack" , "Wilson" , 1978 , 1.99 , 74.50
-PERSON: 51 , "Karen" , "Martinez" , 1979 , 2.00 , 75.00
-PERSON: 52 , "Leo" , "Anderson" , 1980 , 2.01 , 75.50
-PERSON: 53 , "Mona" , "Taylor" , 1981 , 2.02 , 76.00
-PERSON: 54 , "Nina" , "Thomas" , 1982 , 2.03 , 76.50
-PERSON: 55 , "Oscar" , "Hernandez" , 1983 , 2.04 , 77.00
-PERSON: 56 , "Paula" , "Moore" , 1984 , 2.05 , 77.50
-PERSON: 57 , "Quentin" , "Martin" , 1985 , 2.06 , 78.00
-PERSON: 58 , "Rachel" , "Jackson" , 1986 , 2.07 , 78.50
-PERSON: 59 , "Steve" , "Thompson" , 1987 , 2.08 , 79.00
-PERSON: 60 , "Tina" , "White" , 1988 , 2.09 , 79.50
-PERSON: 61 , "Alice" , "Smith" , 1989 , 2.10 , 80.00
-PERSON: 62 , "Bob" , "Johnson" , 1990 , 2.11 , 80.50
-PERSON: 63 , "Charlie" , "Brown" , 1960 , 2.12 , 81.00
-PERSON: 64 , "Diana" , "Williams" , 1961 , 2.13 , 81.50
-PERSON: 65 , "Eve" , "Jones" , 1962 , 2.14 , 82.00
-PERSON: 66 , "Frank" , "Miller" , 1963 , 2.15 , 82.50
-PERSON: 67 , "Grace" , "Davis" , 1964 , 2.16 , 83.00
-PERSON: 68 , "Hank" , "Garcia" , 1965 , 2.17 , 83.50
-PERSON: 69 , "Ivy" , "Rodriguez" , 1966 , 2.18 , 84.00
-PERSON: 70 , "Jack" , "Wilson" , 1967 , 2.19 , 84.50
-PERSON: 71 , "Karen" , "Martinez" , 1968 , 2.20 , 85.00
-PERSON: 72 , "Leo" , "Anderson" , 1969 , 2.21 , 85.50
-PERSON: 73 , "Mona" , "Taylor" , 1970 , 2.22 , 86.00
-PERSON: 74 , "Nina" , "Thomas" , 1971 , 2.23 , 86.50
-PERSON: 75 , "Oscar" , "Hernandez" , 1972 , 2.24 , 87.00
-PERSON: 76 , "Paula" , "Moore" , 1973 , 2.25 , 87.50
-PERSON: 77 , "Quentin" , "Martin" , 1974 , 2.26 , 88.00
+PERSON: 1, "Alice", "Smith", 1960, 1.50, 50.00
+PERSON: 2, "Bob", "Johnson", 1975, 1.80, 75.00
+PERSON: 3, "Charlie", "Williams", 1985, 1.65, 60.00
+PERSON: 4, "David", "Jones", 1990, 1.75, 70.00
+PERSON: 5, "Eve", "Brown", 1980, 1.55, 55.00
+PERSON: 6, "Frank", "Davis", 1965, 1.82, 80.00
+PERSON: 7, "Grace", "Garcia", 1970, 1.62, 65.00
+PERSON: 8, "Hank", "Miller", 1982, 1.77, 77.00
+PERSON: 9, "Ivy", "Wilson", 1995, 1.68, 62.00
+PERSON: 10, "Jack", "Moore", 1988, 1.74, 72.00
+PERSON: 11, "Kathy", "Taylor", 1972, 1.60, 58.00
+PERSON: 12, "Leo", "Anderson", 1968, 1.85, 85.00
+PERSON: 13, "Mia", "Thomas", 1992, 1.63, 63.00
+PERSON: 14, "Nina", "Jackson", 1983, 1.70, 70.00
+PERSON: 15, "Oscar", "White", 1978, 1.78, 78.00
+PERSON: 16, "Paul", "Harris", 1963, 1.76, 76.00
+PERSON: 17, "Quinn", "Martin", 1991, 1.67, 67.00
+PERSON: 18, "Rita", "Thompson", 1986, 1.64, 64.00
+PERSON: 19, "Sam", "Garcia", 1974, 1.81, 81.00
+PERSON: 20, "Tina", "Martinez", 1989, 1.69, 69.00
+PERSON: 21, "Ursula", "Robinson", 1967, 1.73, 73.00
+PERSON: 22, "Victor", "Clark", 1981, 1.79, 79.00
+PERSON: 23, "Wendy", "Rodriguez", 1993, 1.61, 61.00
+PERSON: 24, "Xander", "Lewis", 1984, 1.72, 72.00
+PERSON: 25, "Yara", "Lee", 1996, 1.66, 66.00
+PERSON: 26, "Zach", "Walker", 1979, 1.80, 80.00
+PERSON: 27, "Anna", "Hall", 1964, 1.58, 58.00
+PERSON: 28, "Brian", "Allen", 1987, 1.74, 74.00
+PERSON: 29, "Cathy", "Young", 1994, 1.65, 65.00
+PERSON: 30, "Derek", "Hernandez", 1980, 1.76, 76.00
+PERSON: 31, "Ella", "King", 1971, 1.62, 62.00
+PERSON: 32, "Felix", "Wright", 1992, 1.83, 83.00
+PERSON: 33, "Gina", "Scott", 1985, 1.64, 64.00
+PERSON: 34, "Henry", "Green", 1969, 1.78, 78.00
+PERSON: 35, "Isla", "Adams", 1990, 1.70, 70.00
+PERSON: 36, "Jake", "Baker", 1988, 1.75, 75.00
+PERSON: 37, "Lily", "Gonzalez", 1976, 1.60, 60.00
+PERSON: 38, "Mark", "Nelson", 1983, 1.81, 81.00
+PERSON: 39, "Nora", "Carter", 1991, 1.66, 66.00
+PERSON: 40, "Owen", "Mitchell", 1984, 1.72, 72.00
+PERSON: 41, "Paige", "Perez", 1995, 1.63, 63.00
+PERSON: 42, "Quincy", "Roberts", 1973, 1.77, 77.00
+PERSON: 43, "Riley", "Turner", 1989, 1.68, 68.00
+PERSON: 44, "Sophie", "Phillips", 1992, 1.65, 65.00
+PERSON: 45, "Tom", "Campbell", 1980, 1.74, 74.00
+PERSON: 46, "Uma", "Parker", 1994, 1.62, 62.00
+PERSON: 47, "Vera", "Evans", 1966, 1.70, 70.00
+PERSON: 48, "Will", "Edwards", 1981, 1.80, 80.00
+PERSON: 49, "Xena", "Collins", 1993, 1.61, 61.00
+PERSON: 50, "Yosef", "Stewart", 1978, 1.75, 75.00
+PERSON: 51, "Zoe", "Sanchez", 1985, 1.67, 67.00
+PERSON: 52, "Adam", "Morris", 1990, 1.82, 82.00
+PERSON: 53, "Bella", "Rogers", 1982, 1.64, 64.00
+PERSON: 54, "Chris", "Reed", 1974, 1.76, 76.00
+PERSON: 55, "Diana", "Cook", 1991, 1.60, 60.00
+PERSON: 56, "Ethan", "Morgan", 1988, 1.78, 78.00
+PERSON: 57, "Fiona", "Bell", 1976, 1.65, 65.00
+PERSON: 58, "George", "Murphy", 1993, 1.73, 73.00
+PERSON: 59, "Holly", "Bailey", 1980, 1.62, 62.00
+PERSON: 60, "Ian", "Rivera", 1985, 1.80, 80.00
+PERSON: 61, "Jade", "Cooper", 1992, 1.68, 68.00
+PERSON: 62, "Kyle", "Richardson", 1979, 1.75, 75.00
+PERSON: 63, "Laura", "Cox", 1984, 1.66, 66.00
+PERSON: 64, "Mike", "Howard", 1991, 1.81, 81.00
+PERSON: 65, "Nina", "Ward", 1987, 1.63, 63.00
+PERSON: 66, "Oscar", "Torres", 1995, 1.70, 70.00
+PERSON: 67, "Paula", "Peterson", 1983, 1.64, 64.00
+PERSON: 68, "Quinn", "Gray", 1990, 1.76, 76.00
+PERSON: 69, "Ray", "Ramirez", 1982, 1.78, 78.00
+PERSON: 70, "Sara", "James", 1975, 1.60, 60.00
+PERSON: 71, "Tommy", "Watson", 1989, 1.74, 74.00
+PERSON: 72, "Ulysses", "Brooks", 1994, 1.67, 67.00
+PERSON: 73, "Vicky", "Kelly", 1981, 1.72, 72.00
+PERSON: 74, "Wes", "Sanders", 1993, 1.63, 63.00
+PERSON: 75, "Xena", "Price", 1986, 1.81, 81.00
+PERSON: 76, "Yara", "Bennett", 1992, 1.66, 66.00
+PERSON: 77, "Zane", "Wood", 1978, 1.80, 80.00
 PERSON: 78 , "Rachel" , "Jackson" , 1975 , 2.27 , 88.50
 PERSON: 79 , "Steve" , "Thompson" , 1976 , 2.28 , 89.00
 PERSON: 80 , "Tina" , "White" , 1977 , 2.29 , 89.50

@@ -25,35 +25,36 @@ template<class T>
 class MergeSorter : public ISorter<T> {
 private:
     void Merge(Sequence<T> &sequence, int left, int mid, int right, bool (*comparator)(const T &first, const T &second)) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+        int n1 = mid - left + 1; //левая длина
+        int n2 = right - mid; //правая длина
 
-        Sequence<T>* leftSeq = sequence.GetSubsequence(left, mid);
-        Sequence<T>* rightSeq = sequence.GetSubsequence(mid + 1, right);
+        //Исправить вместо выделения памяти -> индексы
+//        Sequence<T>* leftSeq = sequence.GetSubsequence(left, mid);
+//        Sequence<T>* rightSeq = sequence.GetSubsequence(mid + 1, right);
 
         int i = 0, j = 0, k = left;
         while (i < n1 && j < n2) {
-            if (!comparator(rightSeq->GetElement(j), leftSeq->GetElement(i))) {
-                sequence.Set(leftSeq->GetElement(i), k++);
+            if (!comparator(sequence.GetElement(mid + 1 + j), sequence.GetElement(left + i))) {
+                sequence.Set(sequence.GetElement(left + i), k++);
                 i++;
             } else {
-                sequence.Set(rightSeq->GetElement(j), k++);
+                sequence.Set(sequence.GetElement(mid + 1 + j), k++);
                 j++;
             }
         }
 
         while (i < n1) {
-            sequence.Set(leftSeq->GetElement(i), k++);
+            sequence.Set(sequence.GetElement(left + i), k++);
             i++;
         }
 
         while (j < n2) {
-            sequence.Set(rightSeq->GetElement(j), k++);
+            sequence.Set(sequence.GetElement(mid + 1 + j), k++);
             j++;
         }
 
-        delete leftSeq;
-        delete rightSeq;
+//        delete leftSeq;
+//        delete rightSeq;
     }
 
     void MergeSort(Sequence<T> &sequence, int left, int right, bool (*comparator)(const T &first, const T &second)) {
@@ -119,43 +120,6 @@ public:
                     sequence.Set(sequence.GetElement(j + 1), j);
                     sequence.Set(temp, j + 1);
                 }
-            }
-        }
-    }
-};
-
-// Блинная сортировка (Pancake Sort)
-template<class T>
-class PancakeSorter : public ISorter<T> {
-private:
-    void Flip(Sequence<T> &sequence, int i) {
-        int start = 0;
-        while (start < i) {
-            T temp = sequence.GetElement(start);
-            sequence.Set(sequence.GetElement(i), start);
-            sequence.Set(temp, i);
-            start++;
-            i--;
-        }
-    }
-
-    int FindMax(Sequence<T> &sequence, int n, bool (*comparator)(const T &first, const T &second)) {
-        int maxIndex = 0;
-        for (int i = 1; i < n; ++i) {
-            if (comparator(sequence.GetElement(maxIndex), sequence.GetElement(i))) {
-                maxIndex = i;
-            }
-        }
-        return maxIndex;
-    }
-
-public:
-    void Sort(Sequence<T> &sequence, bool (*comparator)(const T &first, const T &second)) override {
-        for (int currSize = sequence.GetLength(); currSize > 1; --currSize) {
-            int maxIndex = FindMax(sequence, currSize, comparator);
-            if (maxIndex != currSize - 1) {
-                Flip(sequence, maxIndex);
-                Flip(sequence, currSize - 1);
             }
         }
     }

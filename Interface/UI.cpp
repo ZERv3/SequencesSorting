@@ -11,8 +11,6 @@
 #include "PersonSortingInterface.h"  // Подключаем интерфейс для сортировки Person
 #include "IntegerSortingInterface.h" // Интерфейс для сортировки сгенерированных чисел
 
-// Остальной ваш код...
-
 bool SafeReadInt(int &value, bool allowZero = false) {
     std::cin >> value;
     if (std::cin.fail()) {
@@ -23,6 +21,48 @@ bool SafeReadInt(int &value, bool allowZero = false) {
     if (!allowZero && value <= 0) {
         return false;
     }
+    return true;
+}
+
+bool GetSmallChangeChoice(int &smallChange){
+    std::cout << "Перемешать несколько элементов? (1/0): ";
+    if (!SafeReadInt(smallChange, true)) {
+        std::cout << "Некорректный ввод. Попробуйте еще раз." << std::endl;
+        return false;
+    }
+
+    if (smallChange != 0 && smallChange != 1) {
+        std::cout << "Некорректный ввод." << std::endl;
+        return false;
+    }
+    return true;
+}
+
+bool GetSorterTestParams(double &sortedPercentage, int &testRuns){
+    int srtPcrt;
+    std::cout << "Введите процент сортированности объектов (целое число >= 0): ";
+    if (!SafeReadInt(srtPcrt, true)) {
+        std::cout << "Некорректный ввод. Попробуйте еще раз." << std::endl;
+        return false;
+    }
+
+    if (srtPcrt < 0) {
+        std::cout << "Чсло должно быть неотрицательным." << std::endl;
+        return false;
+    }
+    
+    std::cout << "Введите количество проверок для каждой сортировки (целое число > 0): ";
+    if (!SafeReadInt(testRuns)) {
+        std::cout << "Некорректный ввод. Попробуйте еще раз." << std::endl;
+        return false;
+    }
+
+    if (testRuns <= 0) {
+        std::cout << "Число должно быть положительным." << std::endl;
+        return false;
+    }
+    
+    sortedPercentage = static_cast<double>(srtPcrt);
     return true;
 }
 
@@ -66,7 +106,7 @@ void RunUserInterface() {
         std::cout << "3) Функциональные тесты сортировок" << std::endl;
         std::cout << "4) Нагрузочные тесты сортировок" << std::endl;
         std::cout << "5) Сортировка Person" << std::endl;
-        std::cout << "6) Сортировка чисел" << std::endl;
+        std::cout << "6) Генерация и Сортировка чисел" << std::endl;
         std::cout << "0) Выход из программы" << std::endl;
         std::cout << "==============================================" << std::endl;
         std::cout << "Выберите пункт меню: ";
@@ -101,7 +141,7 @@ void RunUserInterface() {
                 }
 
                 {
-                    std::ofstream outFile("../Data/SequenceStressTestsData.csv", std::ios::out);
+                    std::ofstream outFile("Data/SequenceStressTestsData.csv", std::ios::out);
                     if (!outFile) {
                         std::cerr << "Не удалось открыть файл ../Data/SequenceStressTestsData.csv для записи." << std::endl;
                         break;
@@ -129,29 +169,43 @@ void RunUserInterface() {
                 if (!GetStressTestParams(minCount, maxCount, step)) {
                     break;
                 }
+                
+                int testRuns;
+                double sortedPercentage;
+                if (!GetSorterTestParams(sortedPercentage, testRuns)) {
+                    break;
+                }
+                
+                int smallChange;
+                if (!GetSmallChangeChoice(smallChange)) {
+                    break;
+                }
 
                 {
-                    std::ofstream outFile("../Data/SortingStressTestsData.csv", std::ios::out);
+                    std::ofstream outFile("Data/SortingStressTestsData.csv", std::ios::out);
                     if (!outFile) {
-                        std::cerr << "Не удалось открыть файл ../Data/SortingStressTestsData.csv для записи." << std::endl;
+                        std::cerr << "Не удалось открыть файл Data/SortingStressTestsData.csv для записи." << std::endl;
                         break;
                     }
-
-                    outFile << "Кол-во элементов,Insertion Sort,Merge Sort,Quick Sort,Bubble Sort,Pancake Sort\n";
+                    
+                    int minVal = -1000;
+                    int maxVal = 1000;
+                    
+                    outFile << "Кол-во элементов,Insertion Sort,Merge Sort,Quick Sort,Bubble Sort\n";
 
                     for (int dataSize = minCount; dataSize <= maxCount; dataSize += step) {
-                        double insertionTime = RunInsertionSortPerformanceTest(dataSize);
-                        double mergeTime = RunMergeSortPerformanceTest(dataSize);
-                        double quickTime = RunQuickSortPerformanceTest(dataSize);
-                        double bubbleTime = RunBubbleSortPerformanceTest(dataSize);
-                        double pancakeTime = RunPancakeSortPerformanceTest(dataSize);
+                        double insertionTime = RunInsertionSortPerformanceTest(dataSize, testRuns, minVal, maxVal, sortedPercentage, smallChange);
+                        double mergeTime = RunMergeSortPerformanceTest(dataSize, testRuns, minVal, maxVal, sortedPercentage, smallChange);
+                        double quickTime = RunQuickSortPerformanceTest(dataSize, testRuns, minVal, maxVal, sortedPercentage, smallChange);
+                        double bubbleTime = RunBubbleSortPerformanceTest(dataSize, testRuns, minVal, maxVal, sortedPercentage, smallChange);
 
                         outFile << dataSize << ","
                                 << insertionTime << ","
                                 << mergeTime << ","
                                 << quickTime << ","
                                 << bubbleTime << ","
-                                << pancakeTime << "\n";
+//                                << pancakeTime
+                            << "\n";
                     }
                 }
 

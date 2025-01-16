@@ -10,45 +10,45 @@
 
 // Компараторы для Extractor<Person> (по разным полям и направлениям)
 bool CompareExtractorFirstNameAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.firstName < b.value.firstName;
+    return a.GetValue().GetFirstName() < b.GetValue().GetFirstName();
 }
 bool CompareExtractorFirstNameDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.firstName > b.value.firstName;
+    return a.GetValue().GetFirstName() > b.GetValue().GetFirstName();
 }
 
 bool CompareExtractorLastNameAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.lastName < b.value.lastName;
+    return a.GetValue().GetLastName() < b.GetValue().GetLastName();
 }
 bool CompareExtractorLastNameDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.lastName > b.value.lastName;
+    return a.GetValue().GetLastName() > b.GetValue().GetLastName();
 }
 
 bool CompareExtractorIdAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.id < b.value.id;
+    return a.GetValue().GetID() < b.GetValue().GetID();
 }
 bool CompareExtractorIdDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.id > b.value.id;
+    return a.GetValue().GetID() > b.GetValue().GetID();
 }
 
 bool CompareExtractorBirthYearAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.birthYear < b.value.birthYear;
+    return a.GetValue().GetBirthYear() < b.GetValue().GetBirthYear();
 }
 bool CompareExtractorBirthYearDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.birthYear > b.value.birthYear;
+    return a.GetValue().GetBirthYear() > b.GetValue().GetBirthYear();
 }
 
 bool CompareExtractorHeightAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.height < b.value.height;
+    return a.GetValue().GetHeight() < b.GetValue().GetHeight();
 }
 bool CompareExtractorHeightDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.height > b.value.height;
+    return a.GetValue().GetHeight() > b.GetValue().GetHeight();
 }
 
 bool CompareExtractorWeightAsc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.weight < b.value.weight;
+    return a.GetValue().GetWeight() < b.GetValue().GetWeight();
 }
 bool CompareExtractorWeightDesc(const Extractor<Person>& a, const Extractor<Person>& b) {
-    return a.value.weight > b.value.weight;
+    return a.GetValue().GetWeight() > b.GetValue().GetWeight();
 }
 
 // Функция загрузки Person из файла.
@@ -82,13 +82,13 @@ bool SavePersonsToCSV(const std::string& filename, Sequence<Extractor<Person>>& 
     outFile << "id,firstName,lastName,birthYear,height,weight\n";
     for (int i = 0; i < sequence.GetLength(); i++) {
         const Extractor<Person>& ex = sequence.GetElement(i);
-        const Person& p = ex.value;
-        outFile << p.id << ","
-                << p.firstName << ","
-                << p.lastName << ","
-                << p.birthYear << ","
-                << p.height << ","
-                << p.weight << "\n";
+        const Person& p = ex.GetValue();
+        outFile << p.GetID() << ","
+                << p.GetFirstName() << ","
+                << p.GetLastName() << ","
+                << p.GetBirthYear() << ","
+                << p.GetHeight() << ","
+                << p.GetWeight() << "\n";
     }
 
     return true;
@@ -103,7 +103,6 @@ void RunPersonSortingInterface() {
         std::cout << "2) Сортировка слиянием" << std::endl;
         std::cout << "3) Быстрая сортировка (Quick Sort)" << std::endl;
         std::cout << "4) Пузырьковая сортировка (Bubble Sort)" << std::endl;
-        std::cout << "5) Блинная сортировка (Pancake Sort)" << std::endl;
         std::cout << "0) Вернуться в главное меню" << std::endl;
 
         int sortChoice;
@@ -191,7 +190,7 @@ void RunPersonSortingInterface() {
                 }
 
                 DynamicArray<Extractor<Person>> personSequence;
-                if (!LoadPersonsFromFile("../Data/PersonDataPregenerated.txt", personSequence)) {
+                if (!LoadPersonsFromFile("Data/PersonDataPregenerated.txt", personSequence)) {
                     std::cout << "Не удалось загрузить данные Person." << std::endl;
                     break;
                 }
@@ -202,7 +201,7 @@ void RunPersonSortingInterface() {
                     case 2: sorter = new MergeSorter<Extractor<Person>>(); break;
                     case 3: sorter = new QuickSorter<Extractor<Person>>(); break;
                     case 4: sorter = new BubbleSorter<Extractor<Person>>(); break;
-                    case 5: sorter = new PancakeSorter<Extractor<Person>>(); break;
+//                    case 5: sorter = new PancakeSorter<Extractor<Person>>(); break;
                 }
 
                 if (sorter && comparator) {
@@ -210,7 +209,7 @@ void RunPersonSortingInterface() {
                     delete sorter;
                     sorter = nullptr;
 
-                    if (!SavePersonsToCSV("../Data/PersonDataPregeneratedSORTED.csv", personSequence)) {
+                    if (!SavePersonsToCSV("Data/PersonDataPregeneratedSORTED.csv", personSequence)) {
                         std::cout << "Не удалось сохранить результаты сортировки." << std::endl;
                     } else {
                         std::cout << "Сортировка выполнена. Результаты сохранены в Data/PersonDataPregeneratedSORTED.csv" << std::endl;

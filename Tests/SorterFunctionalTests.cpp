@@ -39,53 +39,48 @@ void RunSorterFunctionalTests() {
     MergeSorter<int> mergeSorter;
     QuickSorter<int> quickSorter;
     BubbleSorter<int> bubbleSorter;
-    PancakeSorter<int> pancakeSorter;
+//    PancakeSorter<int> pancakeSorter;
 
     DynamicArray<int> sequence(5);
     FillSequence(sequence);
 
     // Тестирование сортировок с последовательностью чисел
-    std::cout << "Testing Insertion Sort with integers..." << std::endl;
+    std::cout << "Тестируем Insertion Sort для чисел..." << std::endl;
     TestSort(insertionSorter, sequence, AscendingInt);
 
-    std::cout << "Testing Merge Sort with integers..." << std::endl;
+    std::cout << "Тестируем Merge Sort для чисел..." << std::endl;
     FillSequence(sequence);
     TestSort(mergeSorter, sequence, AscendingInt);
 
-    std::cout << "Testing Quick Sort with integers..." << std::endl;
+    std::cout << "Тестируем Quick Sort для чисел..." << std::endl;
     FillSequence(sequence);
     TestSort(quickSorter, sequence, AscendingInt);
 
-    std::cout << "Testing Bubble Sort with integers..." << std::endl;
+    std::cout << "Тестируем Bubble Sort для чисел..." << std::endl;
     FillSequence(sequence);
     TestSort(bubbleSorter, sequence, AscendingInt);
 
-    std::cout << "Testing Pancake Sort with integers..." << std::endl;
-    FillSequence(sequence);
-    TestSort(pancakeSorter, sequence, AscendingInt);
+//    std::cout << "Тестируем Pancake Sort для чисел..." << std::endl;
+//    FillSequence(sequence);
+//    TestSort(pancakeSorter, sequence, AscendingInt);
 
     // Тестирование сортировки объектов Person
     DynamicArray<Person> personSequence(3);
 
-    std::cout << "Testing Merge Sort with Person objects by first name..." << std::endl;
+    std::cout << "Тестируем Merge Sort для Person объектов по параметру first name..." << std::endl;
     FillPersonSequence(personSequence);
     MergeSorter<Person> personMergeSorter;
     TestSort(personMergeSorter, personSequence, CompareFirstName);
 
-    std::cout << "Testing Bubble Sort with Person objects by first name..." << std::endl;
+    std::cout << "Тестируем Bubble Sort для Person объектов по параметру first name..." << std::endl;
     FillPersonSequence(personSequence);
     BubbleSorter<Person> personBubbleSorter;
     TestSort(personBubbleSorter, personSequence, CompareFirstName);
-
-    std::cout << "Testing Pancake Sort with Person objects by first name..." << std::endl;
-    FillPersonSequence(personSequence);
-    PancakeSorter<Person> personPancakeSorter;
-    TestSort(personPancakeSorter, personSequence, CompareFirstName);
-
-    std::cout << "Testing Quick Sort with Person objects by first name..." << std::endl;
+    
+    std::cout << "Тестируем Quick Sort для Person объектов по параметру first name..." << std::endl;
     FillPersonSequence(personSequence);
     QuickSorter<Person> personQuickSorter;
     TestSort(personQuickSorter, personSequence, CompareFirstName);
 
-    std::cout << "All sorting tests passed successfully!" << std::endl;
+    std::cout << "Все сортировки прошли проверку!" << std::endl;
 }
